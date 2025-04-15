@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot - HireSkills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f9ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 32px;
+            color: #2A73CC;
+            margin-bottom: 30px;
+        }
+        #chatbox {
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        #input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        #input:focus {
+            border-color: #2A73CC;
+            box-shadow: 0 0 5px rgba(42, 115, 204, 0.5);
+        }
+        .chat-message {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .chat-message.bot {
+            color: #2A73CC;
+            background-color: #E6F0FA;
+            border-radius: 20px;
+            padding: 10px 20px;
+            max-width: 80%;
+        }
+        .chat-message.user {
+            text-align: right;
+            color: #333;
+            background-color: #f1f1f1;
+            border-radius: 20px;
+            padding: 10px 20px;
+            max-width: 80%;
+            margin-left: auto;
+        }
+        .button {
+            background-color: #2A73CC;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #174A80;
+        }
+        footer {
+            margin-top: 40px;
+            background-color: #1A4F8B;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+        /* Responsiveness */
+        @media screen and (max-width: 600px) {
+            #chatbox {
+                width: 100%;
+                height: 400px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chatbot HireSkills</h1>
+    <div id="chatbox">
+        <div class="chat-message bot">Bonjour ! Comment puis-je vous aider ?</div>
+    </div>
+    <input type="text" id="input" placeholder="Posez une question..." onkeydown="if(event.key === 'Enter') sendMessage()">
+    <button class="button" onclick="sendMessage()">Envoyer</button>
+
+    <script>
+        const chatbox = document.getElementById('chatbox');
+        const input = document.getElementById('input');
+
+        function sendMessage() {
+            const userMessage = input.value;
+            if (userMessage.trim() !== "") {
+                // Afficher le message de l'utilisateur
+                const userMessageElement = document.createElement('div');
+                userMessageElement.classList.add('chat-message', 'user');
+                userMessageElement.textContent = userMessage;
+                chatbox.appendChild(userMessageElement);
+                input.value = "";
+
+                // Répondre du chatbot
+                setTimeout(() => {
+                    const botResponse = getBotResponse(userMessage);
+                    const botMessageElement = document.createElement('div');
+                    botMessageElement.classList.add('chat-message', 'bot');
+                    botMessageElement.textContent = botResponse;
+                    chatbox.appendChild(botMessageElement);
+
+                    chatbox.scrollTop = chatbox.scrollHeight; // Faire défiler le chat vers le bas
+                }, 500);
+            }
+        }
+
+        function getBotResponse(userMessage) {
+            const messageLower = userMessage.toLowerCase();
+            if (messageLower.includes("bonjour") || messageLower.includes("offre")) {
+                return "Bonjour.";
+            }
+
+            if (messageLower.includes("emploi") || messageLower.includes("offre")) {
+                return "Nous avons plusieurs offres d'emploi disponibles. Vous pouvez consulter notre site pour plus de détails.";
+            }
+            if (messageLower.includes("candidature")) {
+                return "Pour soumettre votre candidature, veuillez choisir une offre d'emploi et remplir le formulaire.";
+            }
+            if (messageLower.includes("entretien")) {
+                return "Nous proposons un entretien simulé pour vous aider à vous préparer. Cliquez sur 'Commencer un entretien simulé'.";
+            }
+            if (messageLower.includes("recruteur")) {
+                return "Un recruteur vous contactera bientôt si votre profil correspond à l'offre.";
+            }
+            if (messageLower.includes("aide") || messageLower.includes("cv") || messageLower.includes("lettre de motivation")) {
+                return "Notre assistant virtuel peut vous aider à rédiger votre CV et lettre de motivation. Cliquez sur 'Lancer l'assistant'.";
+            }
+
+            return "Je n'ai pas compris votre question. Essayez de poser une question sur les offres d'emploi, la candidature ou les entretiens.";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 JobLink | Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>

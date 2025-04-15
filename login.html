@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HireSkills</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <h1 class="title">HireSkills</h1>
+
+    <img src="logo.png" alt="Logo HireSkills" class="logo" >
+
+    <div class="container">
+        <h2>Page de Connexion</h2>
+        <form id="loginForm">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" required>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" required>
+
+            <label for="age">Âge :</label>
+            <input type="number" id="age" required min="18" max="50">
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" required>
+
+            <div>
+                <label>
+                    <input type="radio" name="role" id="candidat" value="candidat"> Candidat
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="role" id="recruteur" value="recruteur"> Recruteur
+                </label>
+            </div>
+
+            <div class="buttons">
+
+                <button type="submit" id="confirmer">Confirmer</button>
+                <button type="button" id="reset">Annuler</button>
+                
+                
+            </div>
+        </form>
+
+       
+        <p id="successMessage" class="success-message" style="display: none;">Connexion réussie </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

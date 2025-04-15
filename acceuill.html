@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page d'accueil</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(45deg, #2A73CC, #ffffff);
+      background-size: 200% 200%;
+      animation: backgroundAnimation 6s infinite alternate;
+      color: #1F1F1F;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    header {
+      background-color: #c3dbf8;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-height: 200px;
+      width: auto;
+    }
+
+    nav {
+      background-color: #1A4F8B;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #E6F0FA;
+      color: #1A4F8B;
+    }
+
+    main {
+      flex: 1;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .contact-btn {
+      background-color: #2A73CC;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #174A80;
+    }
+
+    footer {
+      background-color: #1A4F8B;
+      color: white;
+      text-align: center;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo">
+  </header>
+
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#about">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <h1>Bienvenue sur la page d'accueil</h1>
+    <p>Ce projet a pour objectif de mettre en valeur une interface claire et <professionnelle class="br"></professionnelle>
+         HireSkills est une plateforme intelligente de recherche d’emploi spécialement <br>
+         conçue pour les étudiants et jeunes diplômés. Elle facilite la mise en relationbr  <br>
+          entre les chercheurs d’emploi et les recruteurs grâce à des technologies avancées <br>
+          d’intelligence artificielle.</p>
+    <a href="index.html" class="contact-btn">Connecter</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Votre Entreprise</p>
+  </footer>
+
+</body>
+</html>

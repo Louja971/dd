@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Candidat - HireSkills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f4f9ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        header {
+            background-color: #2A73CC;
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 28px;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2A73CC;
+        }
+        .profile-info, .application-status, .offers, .assistant, .interview {
+            margin-bottom: 30px;
+        }
+        .profile-info p, .application-status p, .offers p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .button {
+            background-color: #2A73CC;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #174A80;
+        }
+        .offers-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .offers-list li {
+            background: #E6F0FA;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #1A4F8B;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenue sur votre profil, [Nom Candidat]</h1>
+    </header>
+
+    <div class="container">
+       
+        <div class="profile-info">
+            <div class="section-title">Mon Profil</div>
+            <p><strong>Nom :</strong> [Nom Candidat]</p>
+            <p><strong>Email :</strong> [Email Candidat]</p>
+            <p><strong>Formation :</strong> [Domaine de Formation]</p>
+            <p><strong>Compétences :</strong> [Liste des compétences]</p>
+            <a href="#" class="button">Mettre à jour mon profil</a>
+        </div>
+
+        
+        <div class="application-status">
+            <div class="section-title">Mes Candidatures</div>
+            <p>Voici le statut de vos candidatures récentes :</p>
+            <ul>
+                <li><strong>Postulé pour :</strong> Développeur Web - [Entreprise]</li>
+                <li><strong>Statut :</strong> En attente de réponse</li>
+                <li><strong>Postulé pour :</strong> Data Analyst - [Entreprise]</li>
+                <li><strong>Statut :</strong> Entretien prévu le [Date]</li>
+            </ul>
+        </div>
+
+       
+        <div class="offers">
+            <div class="section-title">Offres d'Emploi Recommandées</div>
+            <p>Voici des offres correspondant à vos compétences :</p>
+            <ul class="offers-list">
+                <li>
+                    <strong>Développeur Full Stack</strong> - [Entreprise]
+                    <a href="#" class="button">Postuler</a>
+                </li>
+                <li>
+                    <strong>Analyste de Données</strong> - [Entreprise]
+                    <a href="#" class="button">Postuler</a>
+                </li>
+                <li>
+                    <strong>Chef de projet Digital</strong> - [Entreprise]
+                    <a href="#" class="button">Postuler</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- chat bot -->
+        <div class="assistant">
+            <div class="section-title">Assistant Virtuel</div>
+            <p>Besoin d’aide pour rédiger votre CV ou lettre de motivation ? Notre assistant virtuel est là pour vous aider.</p>
+            <a href="chatBot.html" class="button">Lancer l'assistant</a> 
+        </div>
+
+        <!--  Entretien  -->
+        <div class="interview">
+            <div class="section-title">Préparez-vous à l'entretien</div>
+            <p>Nous vous proposons un entretien simulé pour vous préparer au mieux aux questions en entretien.</p>
+            <a href="entretienSimule.html" class="button">Commencer un entretien simulé</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 JobLink | Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
